@@ -1,31 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>台灣國際疾病分類學會</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直排列 DIV 並置中圖片</title>
   <style>
-    /* 將整個畫面設為 flex，並水平、垂直置中內容 */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    body {
-      display: flex;
-      justify-content: center; /* 水平置中 */
-      align-items: center;     /* 垂直置中 */
-      background-color: #f5f5f5; /* 可選背景色 */
-    }
-    img {
-      max-width: 100%;
-      height: auto;
+    /* 每個 div 占滿一整列 */
+    .full-row {
       display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+    }
+
+    /* 內部容器讓圖片水平與垂直置中 */
+    .image-container {
+      display: flex;
+      justify-content: center;   /* 水平置中 */
+      align-items: center;       /* 垂直置中 */
+      height: 300px;             /* 視情況調整高度 */
+      background-color: #fff;
+      overflow: hidden;          /* 若圖片超出容器，進行裁切 */
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;       /* 保持比例縮放，又不超出容器 */
+      display: block;            /* 確保 margin、尺寸行為一致 */
     }
   </style>
 </head>
 <body>
-  <!-- 將 src 換成你想顯示的圖片 URL -->
-  <img src="images/logo.jpg" alt="TICDA Logo" />
+
+  <div class="full-row">
+    <div class="image-container">
+      <img src="images/logo.jpg" alt="示意圖一">
+    </div>
+  </div>
+
+  <div class="full-row">
+    <div class="image-container">
+      <a href="01_Medihub/index.html" target="_blank">Demo 1</a>
+    </div>
+  </div>
+
+  <div class="full-row">
+    <div class="image-container">
+      Demo2
+    </div>
+  </div>
+
 </body>
 </html>
