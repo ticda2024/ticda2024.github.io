@@ -728,8 +728,9 @@ body, .banner-area, .banner-area div{
   }
 
   .banner-area .double-content .thumb {
+    text-align: center;
     padding-right: 15px;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   .banner-area.bg-gradient .content .thumb {
