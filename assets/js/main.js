@@ -62,6 +62,7 @@
                 }
             });
 
+            document.querySelector("body > div > div.gallery-area.default-padding > div > div > div > div.col-lg-12.gallery-content.text-center > div > button.active").click();
         });
 
 
