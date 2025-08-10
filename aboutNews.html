@@ -32,7 +32,53 @@
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
+    <style>
+        .pf-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 250px;
+            /* 根據內容調整高度 */
+            padding: 16px;
+            position: relative;
 
+        }
+
+        .pf-item a.btn {
+            margin-top: auto;
+            /* 將按鈕推到底部 */
+        }
+
+        #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #popup-box {
+            background: #fff;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #000;
+            position: relative;
+        }
+
+        #popup-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -141,9 +187,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown">課程活動</a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">行事曆</a></li>
-                                <li><a href="aboutLesson.html">課程活動</a></li>
-                                <li><a href="#">線上影音</a></li>
+                                <li><a href="aboutCalendar.html">行事曆</a></li>
+                                <li><a href="aboutLesson.html">課程活動 上課模式：實體 / 直播</a></li>
+                                <li><a href="aboutLessonVideo.html">線上影音</a></li>
+                                <li><a href="aboutLessonPoint.html">教育積分申請說明</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -162,8 +209,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">入會說明</a>
                             <ul class="dropdown-menu">
                                 <li><a href="aboutMemberType.html">會員類別</a></li>
-                                <li><a href="#">入會申請流程</a></li>
-                                <li><a href="#">團體會員入會</a></li>
+                                <li><a href="aboutMemberJoin.html">入會申請流程</a></li>
+                                <li><a href="aboutMemberTeamJoin.html">團體會員入會</a></li>
                                 <!--
                                 <li><a href="blog-single.html">Blog Single Standard</a></li>
                                 <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
@@ -187,7 +234,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">會員服務</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">編碼QA</a></li>
-                                <li><a href="#">會務QA</a></li>
+                                <li><a href="aboutServiceQA.html">會務QA</a></li>
                                 <li><a href="aboutConversation.html">對話留言</a></li>
                                 <li><a href="aboutBook.html">專書</a></li>
                                 <!--
@@ -311,9 +358,10 @@
     </div> -->
     <!-- End Breadcrumb -->
 
-     <!-- Start Breadcrumb 
+    <!-- Start Breadcrumb 
     ============================================= -->
-    <div class="breadcrumb-area text-center shadow dark bg-fixed text-light" style="background-image: url(assets/img/banner/ticda/11.jpg);">
+    <div class="breadcrumb-area text-center shadow dark bg-fixed text-light"
+        style="background-image: url(assets/img/banner/ticda/11.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -338,10 +386,6 @@
                         <div class="mix-item-menu ">
                             <button class="active" data-filter=".latest">最新公告</button>
                             <button data-filter="*">所有公告</button>
-                            <!-- <button data-filter=".consulting">Consulting</button>
-                            <button data-filter=".finance">Finance</button>
-                            <button data-filter=".branding">Branding</button>
-                            <button data-filter=".capital">Capital</button> -->
                         </div>
                         <!-- End Mixitup Nav-->
                     </div>
@@ -352,126 +396,130 @@
                                 <div class="pf-item latest">
                                     <div class="meta">
                                         <ul>
-                                            <!-- <li>Admin</li> -->
-                                            <!-- <li>25 September, 2025</li> -->
-                                            <li>113/09/08</li>
+                                            <li>2024/09/08</li>
                                         </ul>
                                     </div>
                                     <h4>
                                         於113年9月8日正式成立！
                                     </h4>
-                                    <!-- <p>
-                                        General enquire picture letters garrets on offices of no on. Say one hearing
-                                        between excited evening all inhabit thought you.
-                                    </p> -->
-                                    <a class="btn btn-theme circle border btn-sm"
-                                        href="blog-single-right-sidebar.html">Read More <i
-                                            class="fas fa-long-arrow-right"></i></a>
+                                    <a class="btn btn-theme circle border btn-sm" href="#"
+                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
+                                    <p class="popup-content" style="display: none;">
+                                        為提升服務品質與便利性，本學會以 LINE@ 官方帳號，提供即時、個人化的互動體驗，協助您更有效率地掌握學會資訊與參與各項活動。
+                                    </p>
                                 </div>
                                 <!-- End Single Item -->
                                 <!-- Single Item -->
                                 <div class="pf-item latest">
                                     <div class="meta">
                                         <ul>
-                                            <!-- <li>Admin</li> -->
-                                            <!-- <li>25 September, 2025</li> -->
-                                            <li>113/11/16</li>
+                                            <li>2024/11/01</li>
                                         </ul>
                                     </div>
                                     <h4>
-                                        舉辦第二次讀書會
+                                        本會法人登記公告
                                     </h4>
-                                    <!-- <p>
-                                        General enquire picture letters garrets on offices of no on. Say one hearing
-                                        between excited evening all inhabit thought you.
-                                    </p> -->
-                                    <a class="btn btn-theme circle border btn-sm"
-                                        href="blog-single-right-sidebar.html">Read More <i
-                                            class="fas fa-long-arrow-right"></i></a>
+                                    <a class="btn btn-theme circle border btn-sm" href="#"
+                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
+                                    <p class="popup-content" style="display: none;">
+                                        公告臺灣臺北地方法院113年度法登社字第000120號社團法人台灣國際疾病分類學會設立登記
+                                        主旨：公告魏秀美等聲請辦理社團法人台灣國際疾病分類學會設立登記，業經本院登記處於中華民國113年10月30日登記於法人登記簿，俟完成法人登記程序後，發給法人登記證書。
+                                    </p>
                                 </div>
                                 <!-- End Single Item -->
                                 <!-- Single Item -->
                                 <div class="pf-item latest">
                                     <div class="meta">
                                         <ul>
-                                            <!-- <li>Admin</li> -->
-                                            <!-- <li>25 September, 2025</li> -->
-                                            <li>114/02/22</li>
+                                            <li>2025/05/22</li>
                                         </ul>
                                     </div>
                                     <h4>
-                                        舉辦第三次讀書會
+                                        視訊直播課程參與注意事項
                                     </h4>
-                                    <!-- <p>
-                                        General enquire picture letters garrets on offices of no on. Say one hearing
-                                        between excited evening all inhabit thought you.
-                                    </p> -->
-                                    <a class="btn btn-theme circle border btn-sm"
-                                        href="blog-single-right-sidebar.html">Read More <i
-                                            class="fas fa-long-arrow-right"></i></a>
+                                    <a class="btn btn-theme circle border btn-sm" href="#"
+                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
+                                    <p class="popup-content" style="display: none;">
+                                        一、登入與簽到規範
+                                        登入與登出時間將作為課程簽到與簽退依據，並影響教育積分認列。
+                                        請務必依下列格式設定 Teams 顯示名稱：
+                                        會員：會員編號 + 醫院名稱 + 姓名
+                                        非會員：醫院名稱 + 姓名<br><br>
+
+                                        二、Teams 顯示名稱設定方式
+                                        📍 電腦端（PC）
+                                        開啟 Teams 會議連結，選擇「在瀏覽器上繼續」。
+                                        輸入正確名稱格式後點選「立即加入」。
+                                        若已登入 O365，請先登出並以訪客身分加入，或先修改帳號顯示名稱。
+                                        📱 行動裝置
+                                        須安裝 Teams App。
+                                        建議以「不登入」方式加入會議。
+                                        輸入正確名稱格式後點選「立即加入」。<br><br>
+
+                                        三、在Teams中不使用帳戶加入會議的操作說明，請參閱 <a href="https://reurl.cc/dQNK7D"
+                                            target="_blank">https://reurl.cc/dQNK7D</a>
+                                    </p>
                                 </div>
                                 <!-- End Single Item -->
                                 <!-- Single Item -->
-                                <div class="pf-item">
+                                <div class="pf-item latest">
                                     <div class="meta">
                                         <ul>
-                                            <!-- <li>Admin</li> -->
-                                            <!-- <li>25 September, 2025</li> -->
-                                            <li>114/02/22</li>
+                                            <li>2025/05/27</li>
                                         </ul>
                                     </div>
                                     <h4>
-                                        舉辦第0次讀書會
+                                        DRG管理師培訓課程 開放報名中！ 線上影音學習 × 專業實體講座 × DRG證照認證
                                     </h4>
-                                    <!-- <p>
-                                        General enquire picture letters garrets on offices of no on. Say one hearing
-                                        between excited evening all inhabit thought you.
-                                    </p> -->
-                                    <a class="btn btn-theme circle border btn-sm"
-                                        href="blog-single-right-sidebar.html">Read More <i
-                                            class="fas fa-long-arrow-right"></i></a>
+                                    <a class="btn btn-theme circle border btn-sm" href="#"
+                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
+                                    <p class="popup-content" style="display: none;">
+                                        為迎接健保署擴大住院DRG實施新政策，強化您對DRG制度的核心理解與實務應用力！<br><br>
+
+                                        一、課程特色
+                                        1.系統性介紹 DRG 核心概念、分類架構、編碼邏輯與經營應用。
+                                        2.影音課程可不限次數反覆觀看，輕鬆彈性學習。
+                                        3.完成課程並通過測驗，可取得DRG管理師證照。
+                                        4.含實體課程機會，與專家面對面互動交流。<br><br>
+
+                                        二、課程資訊
+                                        1.上架時間：114年6月起至11月陸續推出。
+                                        2.共五大單元，30學分，每學分約40分鐘。
+                                        3.會員優惠每學分$100元，非會員$120元。
+                                        4.加入LINE官方帳號立即報名： https://lin.ee/9p0vTdm，依「線上影音」頁面說明完成報名與繳費即可於「我的影音」開始上課。
+                                        5.影音課程開通後恕不接受退費，敬請留意！<br><br>
+
+                                        三、取得證照條件
+                                        1.已具備本會核發任一國際疾病分類證照或持有他會疾病分類或健保申報相關證照者。
+                                        2.完成本會DRG管理師訓練課程（30學分）並通過課後測驗。
+                                        3.持有他會疾病分類證照學員，於完成「DRG管理師」系列課程時，同步換發本會國際疾病分類相同等級證照。
+                                    </p>
                                 </div>
                                 <!-- End Single Item -->
                                 <!-- Single Item -->
-                                <div class="pf-item">
+                                <div class="pf-item latest">
                                     <div class="meta">
                                         <ul>
-                                            <!-- <li>Admin</li> -->
-                                            <!-- <li>25 September, 2025</li> -->
-                                            <li>114/02/22</li>
+                                            <li>2025/07/08</li>
                                         </ul>
                                     </div>
                                     <h4>
-                                        舉辦第0次讀書會
+                                        本會於114年6月至114年11月期間舉辦之「114年度DRG管理師培訓課程」，已獲健康保險協會認證。
                                     </h4>
-                                    <!-- <p>
-                                        General enquire picture letters garrets on offices of no on. Say one hearing
-                                        between excited evening all inhabit thought you.
-                                    </p> -->
-                                    <a class="btn btn-theme circle border btn-sm"
-                                        href="blog-single-right-sidebar.html">Read More <i
-                                            class="fas fa-long-arrow-right"></i></a>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="pf-item">
-                                    <div class="meta">
-                                        <ul>
-                                            <!-- <li>Admin</li> -->
-                                            <!-- <li>25 September, 2025</li> -->
-                                            <li>114/02/22</li>
-                                        </ul>
-                                    </div>
-                                    <h4>
-                                        舉辦第0次讀書會
-                                    </h4>
-                                    <!-- <p>
-                                        General enquire picture letters garrets on offices of no on. Say one hearing
-                                        between excited evening all inhabit thought you.
-                                    </p> -->
-                                    <a class="btn btn-theme circle border btn-sm"
-                                        href="blog-single-right-sidebar.html">Read More <i
-                                            class="fas fa-long-arrow-right"></i></a>
+                                    <a class="btn btn-theme circle border btn-sm" href="#"
+                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
+                                    <p class="popup-content" style="display: none;">
+                                        「114年度DRG管理師培訓課程」，健康保險協會學分認列標準：<br>
+                                        1.修習滿 8小時，可認列健康保險協會 1學分。<br>
+                                        2.修習滿 15小時，可認列健康保險協會 2學分。<br>
+                                        3.修習滿 22小時，可認列健康保險協會 3學分。<br>
+                                        4.修習滿 30小時，可認列健康保險協會 4學分。<br>
+
+                                        📌 申請方式說明<br>
+                                        1.課程結束後，本會將統一彙整學員修課資料並提供予健康保險協會。<br>
+                                        2.有申請學分需求之學員，請於課程全數結束後，依連結 https://reurl.cc/NxaDVx 於114年12月10日前完成申請。
+
+                                    </p>
                                 </div>
                                 <!-- End Single Item -->
                             </div>
@@ -516,6 +564,13 @@
     </footer>
     <!-- End Footer -->
 
+    <div id="popup-overlay">
+        <div id="popup-box">
+            <span id="popup-close" onclick="closePopup()" style="font-size: 20px;">×</span>
+            <div id="popup-text"></div>
+        </div>
+    </div>
+
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -534,6 +589,24 @@
     <script src="assets/js/circle-progress.js"></script>
     <script src="assets/js/validnavs.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        function showPopup(event) {
+            event.preventDefault();
+            const anchor = event.currentTarget;
+            const container = anchor.closest('.pf-item');
+            const paragraph = container.querySelector('.popup-content');
+            const popupText = document.getElementById('popup-text');
+            popupText.innerHTML = paragraph.innerHTML;
+
+            document.getElementById('popup-overlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
+
 
 </body>
 

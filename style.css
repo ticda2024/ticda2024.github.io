@@ -5212,7 +5212,6 @@ body,
   position: absolute;
   left: 50%;
   top: 3px;
-  content: "";
   height: 20px;
   width: 2px;
   background: var(--color-primary);
