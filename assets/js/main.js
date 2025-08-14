@@ -62,7 +62,11 @@
                 }
             });
 
-            document.querySelector("body > div > div.gallery-area.default-padding > div > div > div > div.col-lg-12.gallery-content.text-center > div > button.active").click();
+            var btn = document.querySelector("body > div > div.gallery-area.default-padding > div > div > div > div.col-lg-12.gallery-content.text-center > div > button.active");
+            if(btn){
+                btn.click();
+            }
+            // document.querySelector("body > div > div.gallery-area.default-padding > div > div > div > div.col-lg-12.gallery-content.text-center > div > button.active").click();
         });
 
 
