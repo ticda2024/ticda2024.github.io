@@ -41,6 +41,13 @@
             $('.mix-item-menu button').on('click', function(event) {
                 $(this).siblings('.active').removeClass('active');
                 $(this).addClass('active');
+                
+                if($(this).attr("id") == 'latestNews'){
+                    news('latestNews')
+                }
+                else {
+                    news()
+                }
                 event.preventDefault();
             });
 

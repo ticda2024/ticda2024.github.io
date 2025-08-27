@@ -76,6 +76,9 @@
             border-radius: 8px;
             box-shadow: 0 0 10px #000;
             position: relative;
+
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
         #popup-close {
@@ -150,7 +153,7 @@
                             </ul>
                         </li>
                         <li>
-                            <li><a href="news.html">最新消息</a></li>
+                        <li><a href="news.html">最新消息</a></li>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown">課程活動</a>
@@ -241,144 +244,15 @@
                 <div class="row">
                     <div class="col-lg-12 gallery-content text-center">
                         <div class="mix-item-menu ">
-                            <button class="active" data-filter=".latest">最新公告</button>
-                            <button data-filter="*">所有公告</button>
+                            <button class="active" data-filter=".latest" id="latestNews">最新公告</button>
+                            <button data-filter="*" id="allNews">所有公告</button>
                         </div>
                         <!-- End Mixitup Nav-->
                     </div>
                     <div class="col-lg-12 gallery-content">
                         <div class="magnific-mix-gallery masonary">
                             <div id="portfolio-grid" class="gallery-items colums-3">
-                                <!-- Single Item -->
-                                <div class="pf-item latest">
-                                    <div class="meta">
-                                        <ul>
-                                            <li>2024/09/08</li>
-                                        </ul>
-                                    </div>
-                                    <h4>
-                                        於113年9月8日正式成立！
-                                    </h4>
-                                    <a class="btn btn-theme circle border btn-sm" href="#"
-                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
-                                    <p class="popup-content" style="display: none;">
-                                        為提升服務品質與便利性，本學會以 LINE@ 官方帳號，提供即時、個人化的互動體驗，協助您更有效率地掌握學會資訊與參與各項活動。
-                                    </p>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="pf-item latest">
-                                    <div class="meta">
-                                        <ul>
-                                            <li>2024/11/01</li>
-                                        </ul>
-                                    </div>
-                                    <h4>
-                                        本會法人登記公告
-                                    </h4>
-                                    <a class="btn btn-theme circle border btn-sm" href="#"
-                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
-                                    <p class="popup-content" style="display: none;">
-                                        公告臺灣臺北地方法院113年度法登社字第000120號社團法人台灣國際疾病分類學會設立登記
-                                        主旨：公告魏秀美等聲請辦理社團法人台灣國際疾病分類學會設立登記，業經本院登記處於中華民國113年10月30日登記於法人登記簿，俟完成法人登記程序後，發給法人登記證書。
-                                    </p>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="pf-item latest">
-                                    <div class="meta">
-                                        <ul>
-                                            <li>2025/05/22</li>
-                                        </ul>
-                                    </div>
-                                    <h4>
-                                        視訊直播課程參與注意事項
-                                    </h4>
-                                    <a class="btn btn-theme circle border btn-sm" href="#"
-                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
-                                    <p class="popup-content" style="display: none;">
-                                        一、登入與簽到規範
-                                        登入與登出時間將作為課程簽到與簽退依據，並影響教育積分認列。
-                                        請務必依下列格式設定 Teams 顯示名稱：
-                                        會員：會員編號 + 醫院名稱 + 姓名
-                                        非會員：醫院名稱 + 姓名<br><br>
 
-                                        二、Teams 顯示名稱設定方式
-                                        📍 電腦端（PC）
-                                        開啟 Teams 會議連結，選擇「在瀏覽器上繼續」。
-                                        輸入正確名稱格式後點選「立即加入」。
-                                        若已登入 O365，請先登出並以訪客身分加入，或先修改帳號顯示名稱。
-                                        📱 行動裝置
-                                        須安裝 Teams App。
-                                        建議以「不登入」方式加入會議。
-                                        輸入正確名稱格式後點選「立即加入」。<br><br>
-
-                                        三、在Teams中不使用帳戶加入會議的操作說明，請參閱 <a href="https://reurl.cc/dQNK7D"
-                                            target="_blank">https://reurl.cc/dQNK7D</a>
-                                    </p>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="pf-item latest">
-                                    <div class="meta">
-                                        <ul>
-                                            <li>2025/05/27</li>
-                                        </ul>
-                                    </div>
-                                    <h4>
-                                        DRG管理師培訓課程 開放報名中！ 線上影音學習 × 專業實體講座 × DRG證照認證
-                                    </h4>
-                                    <a class="btn btn-theme circle border btn-sm" href="#"
-                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
-                                    <p class="popup-content" style="display: none;">
-                                        為迎接健保署擴大住院DRG實施新政策，強化您對DRG制度的核心理解與實務應用力！<br><br>
-
-                                        一、課程特色
-                                        1.系統性介紹 DRG 核心概念、分類架構、編碼邏輯與經營應用。
-                                        2.影音課程可不限次數反覆觀看，輕鬆彈性學習。
-                                        3.完成課程並通過測驗，可取得DRG管理師證照。
-                                        4.含實體課程機會，與專家面對面互動交流。<br><br>
-
-                                        二、課程資訊
-                                        1.上架時間：114年6月起至11月陸續推出。
-                                        2.共五大單元，30學分，每學分約40分鐘。
-                                        3.會員優惠每學分$100元，非會員$120元。
-                                        4.加入LINE官方帳號立即報名： https://lin.ee/9p0vTdm，依「線上影音」頁面說明完成報名與繳費即可於「我的影音」開始上課。
-                                        5.影音課程開通後恕不接受退費，敬請留意！<br><br>
-
-                                        三、取得證照條件
-                                        1.已具備本會核發任一國際疾病分類證照或持有他會疾病分類或健保申報相關證照者。
-                                        2.完成本會DRG管理師訓練課程（30學分）並通過課後測驗。
-                                        3.持有他會疾病分類證照學員，於完成「DRG管理師」系列課程時，同步換發本會國際疾病分類相同等級證照。
-                                    </p>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="pf-item latest">
-                                    <div class="meta">
-                                        <ul>
-                                            <li>2025/07/08</li>
-                                        </ul>
-                                    </div>
-                                    <h4>
-                                        本會於114年6月至114年11月期間舉辦之「114年度DRG管理師培訓課程」，已獲健康保險協會認證。
-                                    </h4>
-                                    <a class="btn btn-theme circle border btn-sm" href="#"
-                                        onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
-                                    <p class="popup-content" style="display: none;">
-                                        「114年度DRG管理師培訓課程」，健康保險協會學分認列標準：<br>
-                                        1.修習滿 8小時，可認列健康保險協會 1學分。<br>
-                                        2.修習滿 15小時，可認列健康保險協會 2學分。<br>
-                                        3.修習滿 22小時，可認列健康保險協會 3學分。<br>
-                                        4.修習滿 30小時，可認列健康保險協會 4學分。<br>
-
-                                        📌 申請方式說明<br>
-                                        1.課程結束後，本會將統一彙整學員修課資料並提供予健康保險協會。<br>
-                                        2.有申請學分需求之學員，請於課程全數結束後，依連結 https://reurl.cc/NxaDVx 於114年12月10日前完成申請。
-
-                                    </p>
-                                </div>
-                                <!-- End Single Item -->
                             </div>
                         </div>
                     </div>
@@ -412,9 +286,9 @@
     </footer>
     <!-- End Footer -->
 
-    <div id="popup-overlay">
+    <div id="popup-overlay" onclick="closePopup()">
         <div id="popup-box">
-            <span id="popup-close" onclick="closePopup()" style="font-size: 20px;">×</span>
+            <span id="popup-close" onclick="closePopup()" style="font-size: 30px;">×</span>
             <div id="popup-text"></div>
         </div>
     </div>
@@ -454,6 +328,81 @@
         }
     </script>
 
+    <script>
+        function news(type) {
+            // News
+            var data = [
+                {
+
+                    "news_date": "2024/09/08",
+                    "news_title": "於113年9月8日正式成立！",
+                    "news_content": "為提升服務品質與便利性，本學會以 LINE@ 官方帳號，提供即時、個人化的互動體驗，協助您更有效率地掌握學會資訊與參與各項活動。"
+                },
+                {
+                    "news_date": "2024/11/01",
+                    "news_title": "本會法人登記公告",
+                    "news_content": "公告臺灣臺北地方法院113年度法登社字第000120號社團法人台灣國際疾病分類學會設立登記<br><br>主旨：公告魏秀美等聲請辦理社團法人台灣國際疾病分類學會設立登記，業經本院登記處於中華民國113年10月30日登記於法人登記簿，俟完成法人登記程序後，發給法人登記證書。"
+                },
+                {
+                    "news_date": "2025/05/22",
+                    "news_title": "視訊直播課程參與注意事項",
+                    "news_content": " 一、登入與簽到規範 登入與登出時間將作為課程簽到與簽退依據，並影響教育積分認列。  <br>請務必依下列格式設定 Teams 顯示名稱： <br>會員：會員編號 + 醫院名稱 + 姓名 <br>非會員：醫院名稱 + 姓名<br><br> 二、Teams 顯示名稱設定方式 <br>📍 電腦端（PC）開啟 Teams 會議連結，選擇「在瀏覽器上繼續」。 <br>輸入正確名稱格式後點選「立即加入」。<br>若已登入 O365，請先登出並以訪客身分加入，或先修改帳號顯示名稱。<br>📱 行動裝置 <br>須安裝 Teams App。<br>建議以「不登入」方式加入會議。<br>輸入正確名稱格式後點選「立即加入」。<br><br>三、在Teams中不使用帳戶加入會議的操作說明，請參閱 <a href=\"https://reurl.cc/dQNK7D\"target=\"_blank\">https://reurl.cc/dQNK7D</a>"
+                },
+                {
+
+                    "news_date": "2025/05/27",
+                    "news_title": "DRG管理師培訓課程 開放報名中！ 線上影音學習 × 專業實體講座 × DRG證照認證",
+                    "news_content": "為迎接健保署擴大住院DRG實施新政策，強化您對DRG制度的核心理解與實務應用力！<br><br>一、課程特色 <br>1.系統性介紹 DRG 核心概念、分類架構、編碼邏輯與經營應用。 <br>2.影音課程可不限次數反覆觀看，輕鬆彈性學習。 <br>3.完成課程並通過測驗，可取得DRG管理師證照。 <br>4.含實體課程機會，與專家面對面互動交流。<br><br>二、課程資訊 <br>1.上架時間：114年6月起至11月陸續推出。 <br>2.共五大單元，30學分，每學分約40分鐘。 <br>3.會員優惠每學分$100元，非會員$120元。 <br>4.加入LINE官方帳號立即報名： https://lin.ee/9p0vTdm，依「線上影音」頁面說明完成報名與繳費即可於「我的影音」開始上課。 <br>5.影音課程開通後恕不接受退費，敬請留意！<br><br>三、取得證照條件 <br>1.已具備本會核發任一國際疾病分類證照或持有他會疾病分類或健保申報相關證照者。 <br>2.完成本會DRG管理師訓練課程（30學分）並通過課後測驗。 <br>3.持有他會疾病分類證照學員，於完成「DRG管理師」系列課程時，同步換發本會國際疾病分類相同等級證照。"
+                },
+                {
+
+                    "news_date": "2025/07/08",
+                    "news_title": "本會於114年6月至114年11月期間舉辦之「114年度DRG管理師培訓課程」，已獲健康保險協會認證。",
+                    "news_content": "「114年度DRG管理師培訓課程」，健康保險協會學分認列標準：<br>1.修習滿 8小時，可認列健康保險協會 1學分。<br>2.修習滿 15小時，可認列健康保險協會 2學分。<br>3.修習滿 22小時，可認列健康保險協會 3學分。<br>4.修習滿 30小時，可認列健康保險協會 4學分。<br><br>📌 申請方式說明<br>1.課程結束後，本會將統一彙整學員修課資料並提供予健康保險協會。<br>2.有申請學分需求之學員，請於課程全數結束後，依連結 https://reurl.cc/NxaDVx 於114年12月10日前完成申請。"
+                }
+            ]
+
+            var filtered = data;
+            if (type=='latestNews') {
+                const now = new Date();
+                const cutoff = new Date();
+                cutoff.setDate(now.getDate() - 90); // 90 天內
+
+                filtered = data.filter(item => {
+                    const date = new Date(item.news_date);
+                    return date >= cutoff;
+                });
+            }
+
+            filtered.sort(function (a, b) {
+                return new Date(b.news_date) - new Date(a.news_date);
+            });
+
+            // 清空容器
+            $('#portfolio-grid').empty();
+
+            // 逐筆資料處理
+            $.each(filtered, function (index, item) {
+                var html = `
+        <div class="pf-item latest">
+            <div class="meta">
+                <ul>
+                    <li class="news_date">${item.news_date}</li>
+                </ul>
+            </div>
+            <h4 class="news_title">${item.news_title}</h4>
+            <a class="btn btn-theme circle border btn-sm" href="#"
+                onclick="showPopup(event)">Read More <i class="fas fa-long-arrow-right"></i></a>
+            <p class="popup-content" style="display: none;">${item.news_content}</p>
+        </div>
+        `;
+                $('#portfolio-grid').append(html);
+            });
+        }
+    </script>
+    <script>
+        $(document).ready(news('latestNews'));
+    </script>
 
 </body>
 
